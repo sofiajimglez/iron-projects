@@ -4,6 +4,9 @@ const express = require('express');
 const logger = require('morgan'); //shows http requests in the terminal
 const createError = require('http-errors');
 
+/* Load configuration */
+require('./config/db.config');
+
 const app = express();
 
 app.use(logger, 'dev'); //morgan's middleware 
