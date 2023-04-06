@@ -8,8 +8,10 @@ const helmet = require('helmet'); //helps secure by setting various HTTP headers
 
 /* Load configuration */
 require('./config/db.config');
-
 const app = express();
+
+const cors = require('./config/cors.config');
+app.use(cors); //from which domains requests to the api are allowed 
 
 app.use(express.json()); //requests in json format can be interpreted
 app.use(logger('dev')); //morgan's middleware 
